@@ -1,19 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>kit882003</title>
-  <link rel="stylesheet" href="style.css">
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>kit882003 | Moments in focus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "primary": "#000000",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary": "#000000",
+                    "on-primary-fixed": "#1b1b1b",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "outline": "#7e7576",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#5e5e5e",
+                    "primary-fixed": "#e2e2e2",
+                    "on-background": "#0b1c30",
+                    "surface": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#dfe0e0",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-primary-container": "#848484",
+                    "on-secondary-fixed-variant": "#454747",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "secondary": "#5d5f5f",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-surface-variant": "#4c4546",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-container": "#616363",
+                    "primary-container": "#1b1b1b",
+                    "outline-variant": "#cfc4c5",
+                    "tertiary-container": "#1b1b1b",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-tertiary-container": "#848484",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#c6c6c6",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary-fixed": "#1a1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "section-padding": "120px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Geist", "sans-serif"],
+                    "label-sm": ["JetBrains Mono", "monospace"],
+                    "headline-md": ["JetBrains Mono", "monospace"],
+                    "headline-lg": ["JetBrains Mono", "monospace"],
+                    "headline-lg-mobile": ["JetBrains Mono", "monospace"],
+                    "display-lg": ["JetBrains Mono", "monospace"],
+                    "body-md": ["Geist", "sans-serif"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Navbar Scroll Logic */
+        header {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #000000 !important;
+            border-bottom: 1px solid #000000;
+        }
+        .nav-initial {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Carousel Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Custom Hover Offset */
+        .hover-offset:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        
+        /* Vertical Rhythm Bullet */
+        .square-bullet::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: currentColor;
+            margin-right: 12px;
+            margin-bottom: 3px;
+        }
+    </style>
 </head>
-
-<body>
-
-  <section class="hero">
-    <div class="hero-content">
-      kit882003
-    </div>
-  </section>
-
-</body>
-</html>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary-fixed selection:text-primary">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 nav-initial" id="main-nav">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-container-max mx-auto">
+<div class="flex-1 hidden md:flex gap-gutter">
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">Work</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">Archive</a>
+</div>
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary whitespace-nowrap" href="/">kit882003</a>
+<div class="flex-1 flex justify-end gap-gutter">
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hidden md:block" href="#">About</a>
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hidden md:block" href="#">Contact</a>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 z-10"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEtbbkSRS3NFUMqyOqiqohU6TXXEr8-FjD6bYz7ZB0D7WP03Lyd1ndM5MUPr9RNw0gPXYU5GWOwzrSHuOINOjat_8K1QW406w92R1f-dmA6XsmNY-s2KJvFlKbsfYi0uKK_nFkX2vvd6WlBzbDBmUqhktIClRgLAfKNUXKIbl9XOMvL3nZtWIhYMuOo1c4zCN3EJs5-IoarcnwgfQKigUJBNYgWVCchv9H1zu6JrGhh82dfCEPnN2B9XLQb_UcrCZuTzPeG5MTGdzR"/>
+<div class="relative z-20 text-center px-margin-mobile">
+<h2 class="font-display-lg text-display-lg text-white mb-base drop-shadow-lg hidden md:block">Architectural Vision</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-base drop-shadow-md md:hidden">Architectural Vision</h2>
+<p class="font-label-sm text-label-sm text-white uppercase tracking-[0.3em] opacity-90">London / 2024</p>
+</div>
+<div class="absolute bottom-base left-1/2 -translate-x-1/2 z-20 animate-bounce">
+<span class="material-symbols-outlined text-white">expand_more</span>
+</div>
+</section>
+<!-- Slogan Section -->
+<section class="py-section-padding px-margin-mobile max-w-container-max mx-auto border-x border-outline-variant">
+<div class="text-center">
+<h1 class="font-display-lg text-display-lg text-primary uppercase leading-none md:mb-8">Moments<br/>in focus</h1>
+<div class="w-16 h-1 bg-primary mx-auto my-gutter"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Exploring the intersection of brutalist geometry and human emotion through high-contrast digital photography and minimalist architectural studies.
+                </p>
+</div>
+</section>
+<!-- Image Carousel Section -->
+<section class="py-section-padding bg-surface-container-lowest overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-base">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2 hidden md:block">Featured Works</h3>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2 md:hidden">Featured Works</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">A collection of captured perspectives.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-base border border-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="p-base border border-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Carousel Wrapper -->
+<div class="flex overflow-x-auto no-scrollbar gap-gutter px-margin-mobile md:px-margin-desktop snap-x snap-mandatory">
+<!-- Slide 1 -->
+<div class="min-w-[85vw] md:min-w-[600px] snap-center">
+<div class="border border-primary p-base bg-white transition-transform hover-offset">
+<img alt="" class="w-full aspect-[4/5] object-cover mb-base grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJZ-eYg22szZskpsVhAYfR2YW4GhGv0jDSuGfuiSYb0gcy94Q5V4NXSQMFx8H0urornmqI9Gi4wj4gqa08fGEE60KcbZN4NpBiaaYQfAfpgNQpZBBiOPNhH4n4U3VM43tEY3QeVtq3WK5AhymuN3uJ3gBFqzh182UqJBc4pNWXs2TV2STEaS-F4NVA6b7_CeeJAH_8CUXvJRWxG4oLjH4TaKcFUfp2Gwn_70jtPzuYWl0OEZ6tSJtnRtBETPzkVutjtH2FF7skeh4z"/>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">01 / Still Life</span>
+<h4 class="font-headline-md text-headline-md text-primary mt-1">Workspace Meditation</h4>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="min-w-[85vw] md:min-w-[600px] snap-center">
+<div class="border border-primary p-base bg-white transition-transform hover-offset">
+<img alt="" class="w-full aspect-[4/5] object-cover mb-base grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB07YFtAFBIUyWbnDcXbey-abJTcXj2mWjdhY6dAkH22JbDo1D2X00TPOQbnkQSDaCCuUNQW3Hvy4v000KDaB5Jzz8VYTSYNgp_e7R3RY4V0fzjIQ_IDGlYB_Unyj7hk_RrEl68wxDGhzGGpG3T21UCiyuYshRuiOUio_cU_PLEoec9AMVeBAksiJQPhhIFwmktMbRM8Il8VxCxaBA3THMyCR-wsuRmNkd0Vd8OohFtE0qQhdZV0lMDWGCUwxFRlzyFq7JZX_-8CQTD"/>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">02 / Portrait</span>
+<h4 class="font-headline-md text-headline-md text-primary mt-1">Ephemeral Grief</h4>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="min-w-[85vw] md:min-w-[600px] snap-center">
+<div class="border border-primary p-base bg-white transition-transform hover-offset">
+<img alt="" class="w-full aspect-[4/5] object-cover mb-base grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm9FhnY5htS5idOtz30ESHaWt1oY3D95UUS1rju2Gt8T2ZBTQJM5Tv4mT2wdWjwYyh22-qzsZ6sveUAYwlAbK5cQahtrN3IHA6-2TRUK0iDu38EFQQZZVhk6qM9qXKAKcnaJpNrOuFK7Skx8aozAXveET5twOOghWLvJX1rirUVNBV7hWlV_Exx-RtazW7EhsPjs7cEqeQE643uZEXQXl8JGR-nquW9m8Mm33ILyBAH29Eyyawf5CqRdWUC8LlijybCbiGBkBoMXxH"/>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">03 / Architecture</span>
+<h4 class="font-headline-md text-headline-md text-primary mt-1">Brutalist Rhythm</h4>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs / Details Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-primary">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4">
+<h5 class="font-label-sm text-label-sm uppercase text-primary mb-gutter tracking-widest border-b border-primary pb-2">Technical Process</h5>
+<ul class="space-y-base">
+<li class="font-body-md text-body-md square-bullet">High-contrast monochrome calibration</li>
+<li class="font-body-md text-body-md square-bullet">Fixed-lens architectural studies</li>
+<li class="font-body-md text-body-md square-bullet">Minimalist post-production workflow</li>
+<li class="font-body-md text-body-md square-bullet">Physical print optimization</li>
+</ul>
+</div>
+<div class="md:col-span-8 flex flex-col justify-end">
+<div class="relative group">
+<img alt="" class="w-full h-80 object-cover grayscale opacity-30 group-hover:opacity-100 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEtbbkSRS3NFUMqyOqiqohU6TXXEr8-FjD6bYz7ZB0D7WP03Lyd1ndM5MUPr9RNw0gPXYU5GWOwzrSHuOINOjat_8K1QW406w92R1f-dmA6XsmNY-s2KJvFlKbsfYi0uKK_nFkX2vvd6WlBzbDBmUqhktIClRgLAfKNUXKIbl9XOMvL3nZtWIhYMuOo1c4zCN3EJs5-IoarcnwgfQKigUJBNYgWVCchv9H1zu6JrGhh82dfCEPnN2B9XLQb_UcrCZuTzPeG5MTGdzR"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="font-display-lg text-primary text-[10vw] font-black opacity-10">ARCHIVE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-primary mt-section-padding">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-section-padding max-w-container-max mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tighter">kit882003</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 kit882003. All rights reserved.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" href="#">Terms</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" href="#">Index</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+<a class="w-10 h-10 border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.remove('nav-initial');
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.add('nav-initial');
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body></html>
